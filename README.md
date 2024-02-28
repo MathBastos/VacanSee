@@ -15,9 +15,9 @@ O sistema permite a reserva de quartos disponibilizados por diversos hoteis. Com
 # 🛠️ Abrir e rodar o projeto
 
 Após baixar o projeto, para roda-lo localmente:
-
-    * Colocar a pasta do projeto dentro da pasta do servidor ou em algum diretório de conhecimento e rodar na IDE;
-    * Para edição dos arquivos, abri-los em qualquer IDE(Visual Studio por exemplo);
+   * Colocar a pasta do projeto dentro da pasta do servidor(htdocs no xampp por exemplo);
+   * Rodar o script do banco de dados(Script BD.txt) no phpmyadmin, criando a estrutura do banco;
+   * Para edição dos arquivos, abri-los em qualquer IDE(Visual Studio por exemplo);
     
 # Tecnologias utilizadas
 
