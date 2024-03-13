@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+background-attachment: fixed;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 450px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-tittle h3{
+  text-align: center;
+  font-size: 300%; 
+  color: white;
+}
+
+.card-header h3{
+color: white;
+}
+
+.card-text h3{
+    color: white;
+    text-align: center;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.btn{
+color: black;
+background-color: #FFC312;
+width: 150px;
+height: 50px;
+white-space: pre-line !important;
+}
+
+.btn:hover{
+color: black;
+background-color: white;
+}
+
+.sair_btn{
+color: black;
+background-color: #d11507;
+width: 150px;
+height: 50px;
+}
+
+.sair_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}

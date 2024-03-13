@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+background-attachment: fixed;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+margin-top: auto;
+margin-bottom: auto;
+width: 750px;
+background-color: rgba(0,0,0,0.5) !important;
+color: white;
+}
+
+.card-tittle h3{
+  text-align: center;
+  font-size: 300%; 
+  color: white;
+}
+
+.card-header h3{
+color: white;
+}
+
+.card-body h3 {
+  text-align: center;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.cadastrar_btn{
+margin-top: 20px;
+margin-left: 10px;
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.cadastrar_btn:hover{
+color: black;
+background-color: white;
+}
+
+.voltar_btn{
+margin-top: 20px;
+margin-left: 10px;
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.voltar_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+.campos {
+margin-top: 20px;
+}
+
+.inv{
+  visibility: hidden;
+}
+
+#camposObrigatorios{
+  color: #d11507;
+}
