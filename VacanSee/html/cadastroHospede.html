@@ -1,0 +1,158 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VacanSee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-tittle">
+                    <h3>VacanSee</h3>
+                </div>
+                <div class="card-header">
+                    <h3>Cadastre seu usuário</h3>
+                </div>
+                <div class="card-text">
+                    <div class="form-group">
+                        <div class="col-md-12 control-label">
+                            <p id="camposObrigatorios"><h11>*</h11> Campo Obrigatório </p>
+                        </div>
+                    </div>
+                    <form id="cadastroHospede">
+                        <!-- Nome -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="Nome">Nome <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="nome" name="nome" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            
+                        </div>
+
+                        <!-- CPF -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="cpf">CPF <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md campos" required="" type="text" maxlength="11">
+                            </div>
+
+                        <!-- Nascimento -->
+                            <label class="col-md-2 control-label campos" for="dataNasc">Nascimento<h11>*</h11></label>  
+                            <div class="col-md-4">
+                            <input id="dataNasc" name="data_nascimento" class="form-control input-md campos" required="" type="date">
+                            </div>
+                        </div>
+
+                        <!-- Telefone -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="celular">Contato <h11>*</h11></label>
+                            <div class="col-md-4">
+                                <div class="input-group campos">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                    <input id="celular" name="celular" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13"
+                                OnKeyPress="formatar('## #####-####', this)">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="email">Email <h11>*</h11></label>
+                            <div class="col-md-4">
+                                <div class="input-group campos">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <input id="email" name="email" class="form-control" placeholder="email@email.com" required="" type="text">
+                                </div>
+                                <label class="col-md-6 control-label campos inv" for="invisivel">invisivel</label>
+                            </div>    
+                        </div>
+
+                        <!-- CEP -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="CEP">CEP <h11>*</h11></label>
+                                <div class="col-md-4">
+                                    <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md campos" required="" value="" type="search" maxlength="8" >
+                                </div>
+                                <div class="col-md-4"></div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary campos" onclick="pesquisacep(cep.value)">Pesquisar</button>
+                                </div>
+                        </div>
+
+                        <!-- Enredeço CEP -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="prependedtext">Endereço</label>
+                            <div class="col-md-4">
+                                <div class="input-group campos">
+                                <span class="input-group-addon campos">Rua</span>
+                                <input id="rua" name="rua" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                                <div class="col-md-3">
+                                    <div class="input-group campos">
+                                        <span class="input-group-addon campos">Nº <h11>*</h11></span>
+                                        <input id="numero" name="numero" class="form-control" placeholder="" required=""  type="text">
+                                    </div>
+                                </div>
+                            <div class="col-md-3">
+                                <div class="input-group campos">
+                                    <span class="input-group-addon">Estado</span>
+                                    <input id="estado" name="estado" class="form-control" placeholder="" required=""  readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-5">
+                                <div class="input-group campos">
+                                    <span class="input-group-addon">Bairro</span>
+                                    <input id="bairro" name="bairro" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-5">
+                                    <div class="input-group campos">
+                                        <span class="input-group-addon">Cidade</span>
+                                        <input id="cidade" name="cidade" class="form-control" placeholder="" required=""  readonly="readonly" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10">
+                                    <div class="input-group campos">
+                                        <span class="input-group-addon">Complemento</span>
+                                        <input id="complemento" name="complemento" class="form-control" placeholder="" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- User - Senha -->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label campos" for="Usuario">Usuario <h11>*</h11></label>  
+                                <div class="col-md-4">
+                                    <input id="usuario" name="usuario" placeholder="" class="form-control input-md campos" required="" type="text">
+                                </div>
+                                <label class="col-md-2 control-label campos" for="Senha">Senha <h11>*</h11></label>  
+                                <div class="col-md-4">
+                                    <input id="senha" name="senha" placeholder="" class="form-control input-md campos" required="" type="password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-8"></div>
+                            <a href="loginHospede.html"><input type="button" value="Voltar" id="btnVoltar" class="btn voltar_btn"></a>
+                            <input href="loginHospede.html" type="submit" value="Cadastrar" id="btnCadastrarHospede" class="btn cadastrar_btn">
+                        </div>
+                    </form>
+            </div>
+            </div>
+        </div>
+    </div>
+<script src="../js/cadastroHospede.js"></script>
+</body>
