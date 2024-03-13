@@ -12,14 +12,14 @@ function limpaIdAcessorio(){
         }
     });
 }
-function limpaIdVeiculo() {
+function limpaIdquarto() {
     $.ajax({
         type: "GET",
         dataType: "json",
         data: "",
-        url: "../php/redirecionaVeiculo.php?id_veiculo=-1",
+        url: "../php/redirecionaquarto.php?id_quarto=-1",
         success: function (resultado) {
-            window.location.replace("../html/cadastroVeiculo.html?id_veiculo=-1");
+            window.location.replace("../html/cadastroquarto.html?id_quarto=-1");
         },
         error: function () {
 
