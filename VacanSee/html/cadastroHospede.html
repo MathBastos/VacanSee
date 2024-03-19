@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label campos" for="cpf">CPF <h11>*</h11></label>  
                             <div class="col-md-4">
-                                <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md campos" required="" type="text" maxlength="11">
+                                <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md campos" required="" type="text" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)">
                             </div>
 
                         <!-- Nascimento -->
@@ -57,8 +57,7 @@
                             <div class="col-md-4">
                                 <div class="input-group campos">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                    <input id="celular" name="celular" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13"
-                                OnKeyPress="formatar('## #####-####', this)">
+                                    <input id="celular" name="celular" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" OnKeyPress="formatar('## #####-####', this)">
                                 </div>
                             </div>
                         </div>
