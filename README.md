@@ -1,25 +1,25 @@
 # 🏠 VacanSee
 
-Desenvolvidos por Lucas Silva Pinto e Matheus Henrique Bastos durante a faculdade.
+Developed by Lucas Silve Pinto and Matheus Henrique Bastos while in University.
 
-# Descrição do Projeto
+# Project description
 
-Projeto em desenvolvimento para a disciplina Experiência Criativa: Projetando Sistemas de Informação do curso Bacharelado em Sistemas de Informação. O VacanSee é uma plataforma web desenvolvida para facilitar o processo de reserva de quartos de hoteis, apresentando os produtos de maneira simples e de facil localização.
+Project developed to "Experiência Criativa: Projetando Sistemas de Informação" subject to Sistemas de Informação course. VacanSee is a web platform to facilitate the hotel booking process, presenting the products in an user friendly interface.
 
-O sistema permite a reserva de quartos disponibilizados por diversos hoteis. Com isso, possibilita o usuário de encontrar o quarto ideal para suas necessidades.
+The system allows you to book rooms offered by different hotels. Making the user able to choose their ideal room to their needs.
 
-# 📁 Acesso ao projeto
+# 📁 Project access
 
-É possível acessar o código fonte do projeto ou baixá-lo através do github. Além disso está disponível a documentação feita durante o projeto.
+You can access the project's source code or download it from github. In addition, documentation created during the project is available in its respective folder.
 
-# 🛠️ Abrir e rodar o projeto
+# 🛠️ How to open and run the project
 
-Após baixar o projeto, para roda-lo localmente:
-   * Colocar a pasta do projeto dentro da pasta do servidor(htdocs no xampp por exemplo);
-   * Rodar o script do banco de dados(Script BD.txt) no phpmyadmin, criando a estrutura do banco;
-   * Para edição dos arquivos, abri-los em qualquer IDE(Visual Studio por exemplo);
+After downloading the project, to run it locally:
+   * Place the project folder inside the server folder (htdocs in xampp for example);
+   * Run the database script (Script BD.txt) in phpmyadmin, creating the database structure;
+   * To edit the files, open them in any IDE (Visual Studio for example);
     
-# Tecnologias utilizadas
+# Technologies
 
     * PHP
     * JQuery
