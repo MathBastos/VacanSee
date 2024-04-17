@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/04/2024 às 16:53
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 17-Abr-2024 às 18:45
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -21,10 +21,24 @@ SET time_zone = "+00:00";
 -- Banco de dados: `vacansee`
 --
 
+DELIMITER $$
+--
+-- Procedimentos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `BUSCA_PERFIL` (IN `id` INT)   BEGIN
+SELECT nome, celular, email
+    FROM usuario AS u
+        INNER JOIN hospede AS h
+            ON h.id_hospede = (SELECT id_hospede FROM hospede WHERE id_usuario = id)
+    WHERE u.id_usuario = id;
+END$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `endereco`
+-- Estrutura da tabela `endereco`
 --
 
 CREATE TABLE `endereco` (
@@ -36,12 +50,12 @@ CREATE TABLE `endereco` (
   `rua` varchar(45) NOT NULL,
   `numero` int(11) NOT NULL,
   `complemento` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `hospede`
+-- Estrutura da tabela `hospede`
 --
 
 CREATE TABLE `hospede` (
@@ -50,12 +64,20 @@ CREATE TABLE `hospede` (
   `celular` varchar(45) NOT NULL,
   `data_nascimento` date NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `hospede`
+--
+
+INSERT INTO `hospede` (`id_hospede`, `cpf`, `celular`, `data_nascimento`, `id_usuario`) VALUES
+(1, '104.634.719-54', '41 99552-1367', '1998-11-20', 1),
+(2, '561.548.879-49', '41 99704-5234', '2001-01-13', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `hotel`
+-- Estrutura da tabela `hotel`
 --
 
 CREATE TABLE `hotel` (
@@ -64,12 +86,12 @@ CREATE TABLE `hotel` (
   `telefone` varchar(45) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_endereco` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `quarto`
+-- Estrutura da tabela `quarto`
 --
 
 CREATE TABLE `quarto` (
@@ -86,12 +108,12 @@ CREATE TABLE `quarto` (
   `valor_dia` double NOT NULL,
   `flag_reservado` varchar(5) NOT NULL,
   `id_hotel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `reserva`
+-- Estrutura da tabela `reserva`
 --
 
 CREATE TABLE `reserva` (
@@ -101,12 +123,12 @@ CREATE TABLE `reserva` (
   `valor_reserva` double NOT NULL,
   `id_hospede` int(11) NOT NULL,
   `id_quarto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -116,27 +138,35 @@ CREATE TABLE `usuario` (
   `usuario` varchar(45) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `flag_bloqueado` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `usuario`, `senha`, `flag_bloqueado`) VALUES
+(1, 'lucas silva', 'lucas@teste.com', 'lucas', 'e10adc3949ba59abbe56e057f20f883e', 'N'),
+(2, 'Matheus Bastos', 'matheus@teste.com', 'matheus', 'e10adc3949ba59abbe56e057f20f883e', 'N');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `endereco`
+-- Índices para tabela `endereco`
 --
 ALTER TABLE `endereco`
   ADD PRIMARY KEY (`id_endereco`);
 
 --
--- Índices de tabela `hospede`
+-- Índices para tabela `hospede`
 --
 ALTER TABLE `hospede`
   ADD PRIMARY KEY (`id_hospede`),
   ADD KEY `fk_usuario_hospede` (`id_usuario`) USING BTREE;
 
 --
--- Índices de tabela `hotel`
+-- Índices para tabela `hotel`
 --
 ALTER TABLE `hotel`
   ADD PRIMARY KEY (`id_hotel`),
@@ -144,14 +174,14 @@ ALTER TABLE `hotel`
   ADD KEY `fk_endereco_hotel` (`id_endereco`);
 
 --
--- Índices de tabela `quarto`
+-- Índices para tabela `quarto`
 --
 ALTER TABLE `quarto`
   ADD PRIMARY KEY (`id_quarto`),
   ADD KEY `fk_hotel` (`id_hotel`);
 
 --
--- Índices de tabela `reserva`
+-- Índices para tabela `reserva`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id_reserva`),
@@ -159,13 +189,13 @@ ALTER TABLE `reserva`
   ADD KEY `fk_reserva_quarto` (`id_quarto`);
 
 --
--- Índices de tabela `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -178,7 +208,7 @@ ALTER TABLE `endereco`
 -- AUTO_INCREMENT de tabela `hospede`
 --
 ALTER TABLE `hospede`
-  MODIFY `id_hospede` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_hospede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `hotel`
@@ -202,33 +232,33 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `hospede`
+-- Limitadores para a tabela `hospede`
 --
 ALTER TABLE `hospede`
   ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
 
 --
--- Restrições para tabelas `hotel`
+-- Limitadores para a tabela `hotel`
 --
 ALTER TABLE `hotel`
   ADD CONSTRAINT `fk_endereco_hotel` FOREIGN KEY (`id_endereco`) REFERENCES `endereco` (`id_endereco`),
   ADD CONSTRAINT `fk_usuario_hotel` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
 
 --
--- Restrições para tabelas `quarto`
+-- Limitadores para a tabela `quarto`
 --
 ALTER TABLE `quarto`
   ADD CONSTRAINT `fk_hotel` FOREIGN KEY (`id_hotel`) REFERENCES `hotel` (`id_hotel`);
 
 --
--- Restrições para tabelas `reserva`
+-- Limitadores para a tabela `reserva`
 --
 ALTER TABLE `reserva`
   ADD CONSTRAINT `fk_reserva_hospede` FOREIGN KEY (`id_hospede`) REFERENCES `hospede` (`id_hospede`),
