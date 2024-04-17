@@ -27,6 +27,7 @@ $(document).ready(function () {
                 }else{
                     html += "<td align='center'> <a onclick='unblock(" + resultado[i].id_usuario + ")'><i class='fa fa-unlock' aria-hidden='true'></i></a></td>";
                 }
+                html += "<td align='center'> <a onclick='deleteUsuario("+ resultado[i].id_usuario +")'> <i class='fas fa-trash-alt' aria-hidden='true'></i> </td>";
                 html += "</tr>";
             }
             html += "</table>";
@@ -73,6 +74,7 @@ function unblock(id){
 }
 
 function editHospede(id) {
+    console.log(id)
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -85,6 +87,33 @@ function editHospede(id) {
 
         }
     });
-
-
 }
+
+function deleteUsuario(id){
+    
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        data: "",
+        url: "../php/deletaHospede.php?id_usuario="+id,
+        success: function (resultado) {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data: "",
+                url: "../php/deletaUsuario.php?id_usuario="+id,
+                success: function (resultado) {
+                    alert("Usuário removido com sucesso!");
+                    window.location.reload();
+                },
+                error: function (){ 
+                }
+            });
+        },
+        error: function (){ 
+        }
+    });
+    
+
+}   
+
