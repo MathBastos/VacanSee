@@ -6,6 +6,7 @@ $permite_cadastro = false;
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $senha_md5 = md5($dados['senha']);
 $id_hospede = $_SESSION["id_hospede"];
+echo($id_hospede);
 
 //$isAlterar = $id_hospede > 0 ? true:false;
 
@@ -66,7 +67,6 @@ if($permite_cadastro){
         $query_usuario = "INSERT INTO usuario (nome, email, usuario, senha, flag_bloqueado) 
                             VALUES (:nome, :email, :usuario, :senha, :flag_bloqueado)";
         $flag_bloqueado = "N";
-
     }
 
     //bindando os valores do form nas variaveis para utilizar a inserção SQL
