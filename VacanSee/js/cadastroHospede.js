@@ -13,10 +13,7 @@ cadHospede.addEventListener("submit", async (e) => {
 
     const resposta = await dados.json();
     alert(resposta);
-
-    if (resposta == "Usuario cadastrado com sucesso!"){
-        location.href = 'loginHospede.html'
-    }
+    location.href = 'loginHospede.html'
 });
 
 function formatar(mascara, documento) {
