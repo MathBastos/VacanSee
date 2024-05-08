@@ -26,3 +26,18 @@ function limpaIdquarto() {
         }
     });
 }
+
+function CheckSessao(){
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        data: "",
+        url: "../php/valida_login.php",
+        success: function () {  
+        },
+        error: function (resultado){
+            console.log(resultado.check);
+            alert(resultado.check);
+        }
+    });
+}

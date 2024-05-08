@@ -1,6 +1,11 @@
 <?php
+include_once "conexao.php";
 session_start();
 if(!$_SESSION['nome']){
-    echo json_encode("Erro: Sessão não existente");
+    $retorno["check"] = "deu boa";
+    echo json_encode($retorno);
+}else{
+    $retorno["check"] = "deu ruim";
+    echo json_encode($retorno);
 }
 ?>
