@@ -1,6 +1,6 @@
 # 🏠 VacanSee
 
-Developed by Lucas Silve Pinto and Matheus Henrique Bastos while in University.
+Developed by Lucas Silva Pinto and Matheus Henrique Bastos while in University.
 
 # Project description
 
