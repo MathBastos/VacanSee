@@ -16,7 +16,7 @@ You can access the project's source code or download it from github. In addition
 
 After downloading the project, to run it locally:
    * Place the project folder inside the server folder (htdocs in xampp for example);
-   * Run the database script (Script BD.txt) in phpmyadmin, creating the database structure;
+   * Import the database script (vacansee.sql) in phpmyadmin, creating the database structure;
    * To edit the files, open them in any IDE (Visual Studio for example);
     
 # Technologies
