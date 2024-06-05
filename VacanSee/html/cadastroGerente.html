@@ -9,9 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="../js/editaGerente.js"></script>
 </head>
 
-<body>
+<body onload="editaGerente()">
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
@@ -32,7 +33,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label campos" for="nome">Nome <h11>*</h11></label>  
                             <div class="col-md-10">
-                                <input id="nome" name="nome" placeholder="" class="form-control input-md campos" required="" type="text">
+                                <input id="nome" name="nome" placeholder="" pattern="[A-Za-záàâãéèêíóôõúç\s]{5,50}" title="Nome com 5 a 50 letras" class="form-control input-md campos" required="" type="text">
                             </div>
                         </div>
 
@@ -40,7 +41,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label campos" for="cnpj">CNPJ <h11>*</h11></label>  
                             <div class="col-md-4">
-                                <input id="cnpj" name="cnpj" placeholder="Apenas números" class="form-control input-md campos" required="" type="text" maxlength="1A8" OnKeyPress="formatar('##.###.###/####-##', this)">
+                                <input id="cnpj" name="cnpj" placeholder="Apenas números" class="form-control input-md campos" required="" type="text" maxlength="18" pattern="\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}" title="XX.XXX.XXX/XXXX-XX" OnKeyPress="formatar('##.###.###/####-##', this)">
                             </div>
 
                         <!-- Telefone -->
@@ -60,7 +61,7 @@
                             <div class="col-md-4">
                                 <div class="input-group campos">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <input id="email" name="email" class="form-control" placeholder="email@email.com" required="" type="text" >
+                                    <input id="email" name="email" class="form-control" placeholder="email@email.com" required="" type="email">
                                 </div>
                                 <label class="col-md-6 control-label campos inv" for="invisivel">invisivel</label>
                             </div>  
@@ -125,6 +126,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Senha -->
                         <div class="form-group">
                             <label class="col-md-2 control-label campos" for="Usuario">Usuario <h11>*</h11></label>  
@@ -141,7 +143,7 @@
                         <div class="card-body">
                             <div class="col-md-8"></div>
                             <a href="loginGerente.html"><input type="button" value="Voltar" id="btnVoltar" class="btn Voltar_btn"></a>
-                            <input href="loginGerente.html" type="submit" value="Cadastrar" id="btnCadastrarGerente" class="btn cadastrar_btn">
+                            <input type="submit" value="Cadastrar" id="btnCadastrarGerente" class="btn cadastrar_btn">
                         </div>
                         </div>
                     </form>

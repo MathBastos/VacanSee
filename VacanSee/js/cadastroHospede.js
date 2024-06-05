@@ -8,12 +8,14 @@ cadHospede.addEventListener("submit", async (e) => {
     const dados = await fetch("../php/cadastroHospede.php", {
         method: "POST",
         body: dadosForm,
-
     });
 
     const resposta = await dados.json();
     alert(resposta);
-    location.href = 'loginHospede.html'
+
+    if (resposta == "Usuario cadastrado com sucesso!"){
+        location.href = 'loginHospede.html'
+    }
 });
 
 function formatar(mascara, documento) {
