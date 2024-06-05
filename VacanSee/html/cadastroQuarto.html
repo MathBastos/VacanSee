@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AluCar</title>
+    <title>VacanSee</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/cadastroQuarto.css">
@@ -41,7 +41,13 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label campos" for="tipo_cama">Tipo Camas <h11>*</h11></label>  
                             <div class="col-md-4">
-                                <input id="tipo_cama" name="tipo_cama" placeholder="" class="form-control input-md campos" required="" type="text">
+                                <select class='form-control input-md campos' name="tipo_cama" id="tipo_cama" required>
+                                    <option value=""></option>
+                                    <option value="solteiro">Solteiro</option>
+                                    <option value="casal">Casal</option>
+                                </select>
+                                
+                                <!--<input id="tipo_cama" name="tipo_cama" placeholder="" class="form-control input-md campos" required="" type="text"> -->
                             </div>
                             <label class="col-md-2 control-label campos" for="qtd_cama">Qtde Camas <h11>*</h11></label>  
                             <div class="col-md-4">
@@ -57,7 +63,12 @@
                             </div>
                             <label class="col-md-2 control-label campos" for="banheira">Banheira <h11>*</h11></label>  
                             <div class="col-md-4">
-                                <input id="banheira" name="banheira" placeholder="" class="form-control input-md campos" required="" type="text">
+                                <select class='form-control input-md campos' name="banheira" id="banheira" required>
+                                    <option value=""></option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                                <!--<input id="banheira" name="banheira" placeholder="" class="form-control input-md campos" required="" type="text"> -->
                             </div>
                         </div>
 
@@ -65,15 +76,30 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label campos" for="ar_condicionado">Ar Cond. <h11>*</h11></label>  
                             <div class="col-md-2">
-                                <input id="ar_condicionado" name="ar_condicionado" placeholder="" class="form-control input-md campos" required="" type="text">
+                                <select class='form-control input-md campos' name="ar_condicionado" id="ar_condicionado" required>
+                                    <option value=""></option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                                <!--<input id="ar_condicionado" name="ar_condicionado" placeholder="" class="form-control input-md campos" required="" type="text">-->
                             </div>
                             <label class="col-md-2 control-label campos" for="servico_quarto">Serv. Quarto <h11>*</h11></label>  
                             <div class="col-md-2">
-                                <input id="servico_quarto" name="servico_quarto" placeholder="" class="form-control input-md campos" required="" type="text">
+                                <select class='form-control input-md campos' name="servico_quarto" id="servico_quarto" required>
+                                    <option value=""></option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                                <!--<input id="servico_quarto" name="servico_quarto" placeholder="" class="form-control input-md campos" required="" type="text">-->
                             </div>
                             <label class="col-md-2 control-label campos" for="cafe_manha">Cafe da manha <h11>*</h11></label> 
                             <div class="col-md-2">
-                                <input id="cafe_manha" name="cafe_manha" placeholder="" class="form-control input-md campos" required="" type="text">
+                                <select class='form-control input-md campos' name="cafe_manha" id="cafe_manha" required>
+                                    <option value=""></option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                                <!--<input id="cafe_manha" name="cafe_manha" placeholder="" class="form-control input-md campos" required="" type="text">-->
                             </div>
                         </div>
                         
