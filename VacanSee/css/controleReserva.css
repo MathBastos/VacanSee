@@ -9,22 +9,16 @@ font-family: 'Numans', sans-serif;
 background-attachment: fixed;
 }
 
-.input {
-  color: white;
-  border: none;
-  background-color: transparent;
-  align-items: center;
-}
 .container{
 height: 100%;
 align-content: center;
 }
 
 .card{
-height: 700px;
+height: 100%;
+width: 1500px !important;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
 background-color: rgba(0,0,0,0.5) !important;
 }
 
@@ -38,12 +32,8 @@ background-color: rgba(0,0,0,0.5) !important;
 color: white;
 }
 
-.card-text h3{
+.card-table{
     color: white;
-    text-align: center;
-}
-
-.card-body{
     text-align: center;
 }
 
@@ -60,26 +50,29 @@ box-shadow: 0 0 0 0 !important;
 
 }
 
-.btn{
+.cadastrar_btn{
 color: black;
 background-color: #FFC312;
 width: 150px;
 height: 50px;
 }
 
-.btn:hover{
+.cadastrar_btn:hover{
 color: black;
 background-color: white;
 }
 
-.sair_btn{
+.voltar_btn{
+margin-top: 2%;
+margin-left: 2%;
+margin-right: 500px;
 color: black;
-background-color: #d11507;
+background-color: #FFC312;
 width: 150px;
 height: 50px;
 }
 
-.sair_btn:hover{
+.voltar_btn:hover{
 color: black;
 background-color: white;
 }
@@ -90,4 +83,12 @@ color: white;
 
 .links a{
 margin-left: 4px;
+}
+
+.campos {
+margin-top: 20px;
+}
+
+.table{
+color: white;
 }

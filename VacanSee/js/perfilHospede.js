@@ -3,7 +3,7 @@ $(document).ready(function () {
         type: "GET",
         dataType: "json",
         data: "",
-        url: "../php/perfilHospede.php",
+        url: "../php/buscaPerfilHospede.php",
         success: function (resultado) {
             document.getElementById("nome").value = resultado.nome;
             document.getElementById("celular").value = resultado.celular;

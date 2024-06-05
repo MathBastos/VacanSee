@@ -1,14 +1,14 @@
-const loginHospede = document.getElementById("loginHospedeForm");
+const loginGerente = document.getElementById("loginGerenteForm");
 var usuario = document.getElementById('usuario');
 
-loginHospede.addEventListener("submit", async (e) => {
+loginGerente.addEventListener("submit", async (e) => {
 
     if( usuario.value == "admin"){
         window.location.replace("../html/indexAdm.html");
     }
 
     e.preventDefault();
-    const dadosForm = new FormData(loginHospede);
+    const dadosForm = new FormData(loginGerente);
     dadosForm.append("add", 1);
 
     const dados = await fetch("../php/login.php", {
@@ -22,7 +22,7 @@ loginHospede.addEventListener("submit", async (e) => {
     } 
 
     if(resposta == "sucesso"){
-        window.location.replace("../html/indexHospede.html");
+        window.location.replace("../html/indexGerente.html");
     }
     if(resposta == "erro"){
         alert("Oops, tem algo errado! Verifique suas credenciais.");
@@ -34,9 +34,9 @@ function limpaId() {
         type: "GET",
         dataType: "json",
         data: "",
-        url: "../php/redirecionaHospede.php?id_hospede=-1",
+        url: "../php/redirecionaGerente.php?id_hotel=-1",
         success: function (resultado) {
-            window.location.replace("../html/cadastroHospede.html?id_hospede=-1");
+            window.location.replace("../html/cadastroGerente.html?id_hotel=-1");
         },
         error: function () {
 

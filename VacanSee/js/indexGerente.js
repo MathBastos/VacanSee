@@ -1,18 +1,35 @@
-function limpaIdAcessorio(){
+$(document).ready(function () {
     $.ajax({
         type: "GET",
         dataType: "json",
         data: "",
-        url: "../php/redirecionaAcessorio.php?id_acessorio=-1",
+        url: "../php/buscaPerfilGerente.php",
         success: function (resultado) {
-            window.location.replace("../html/cadastroAcessorio.html?id_acessorio=-1");
+            document.getElementById("nome").value = resultado.nome;
         },
-        error: function (){
-            
+        error: function () {
         }
     });
-}
-function limpaIdquarto() {
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        data: "",
+        url: "../php/valida_login.php",
+        success: function (resultado) { 
+            if (resultado == 2){
+                alert("Faça o login primeiro!");
+                window.location.replace("../html/index.html");
+            }
+        },
+        error: function (){
+        }
+    });
+});
+
+function limpaIdQuarto() {
     $.ajax({
         type: "GET",
         dataType: "json",

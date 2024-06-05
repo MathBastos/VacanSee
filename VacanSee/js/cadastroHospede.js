@@ -8,7 +8,6 @@ cadHospede.addEventListener("submit", async (e) => {
     const dados = await fetch("../php/cadastroHospede.php", {
         method: "POST",
         body: dadosForm,
-
     });
 
     const resposta = await dados.json();
