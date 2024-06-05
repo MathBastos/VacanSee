@@ -3,7 +3,7 @@ $(document).ready(function () {
         type: "GET",
         dataType: "json",
         data: "",
-        url: "../php/controleAcessoHospede.php",
+        url: "../php/controleAcessoGerente.php",
         success: function (resultado) {
 
             var html = "<table class='table' itemborder='1'>";
@@ -11,7 +11,7 @@ $(document).ready(function () {
             html += "<tr>";
             html += "<td align='center'>" + "ID" + "</td>";
             html += "<td align='center'>" + "Nome" + "</td>";
-            html += "<td align='center'>" + "CPF" + "</td>";
+            html += "<td align='center'>" + "CNPJ" + "</td>";
             html += "<td align='center'>" + "Editar" + "</td>";
             html += "<td align='center'>" + "Bloqueado" + "</td>";
             html += "<td align='center'>" + "Deletar" + "</td>";
@@ -21,8 +21,8 @@ $(document).ready(function () {
                 html += "<tr>";
                 html += "<td align='center'>" + resultado[i].id + "</td>";
                 html += "<td align='center'>" + resultado[i].nome + "</td>";
-                html += "<td align='center'>" + resultado[i].cpf + "</td>";
-                html += "<td align='center'> <a onclick='editHospede(" + resultado[i].id + ")'> <i class='fa fa-pencil-square-o' aria-hidden='true'></i></td>";
+                html += "<td align='center'>" + resultado[i].cnpj + "</td>";
+                html += "<td align='center'> <a onclick='editGerente(" + resultado[i].id + ")'> <i class='fa fa-pencil-square-o' aria-hidden='true'></i></td>";
                 if (resultado[i].flag_bloqueado == "N"){
                     html += "<td align='center'> <a onclick='block(" + resultado[i].id_usuario + ")'><i class='fa fa-lock' aria-hidden='true'></i></a></td>";
                 }else{
@@ -74,15 +74,15 @@ function unblock(id){
     });
 }
 
-function editHospede(id) {
+function editGerente(id) {
     console.log(id)
     $.ajax({
         type: "GET",
         dataType: "json",
         data: "",
-        url: "../php/redirecionaHospede.php?id_hospede=" + id,
+        url: "../php/redirecionaGerente.php?id_gerente=" + id,
         success: function (resultado) {
-            window.location.replace("../html/cadastroHospede.html?id_hospede=" + id);
+            window.location.replace("../html/cadastroGerente.html?id_hotel=" + id);
         },
         error: function () {
 
@@ -96,7 +96,7 @@ function deleteUsuario(id){
         type: "GET",
         dataType: "json",
         data: "",
-        url: "../php/deletaHospede.php?id_usuario="+id,
+        url: "../php/deletaGerente.php?id_usuario="+id,
         success: function (resultado) {
             $.ajax({
                 type: "GET",

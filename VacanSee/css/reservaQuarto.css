@@ -9,23 +9,39 @@ font-family: 'Numans', sans-serif;
 background-attachment: fixed;
 }
 
-.input {
+.h2{
+  font-weight: bold;
+  margin-left: 25%;
+}
+
+.h6{
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.input{
   color: white;
   border: none;
   background-color: transparent;
-  align-items: center;
+  font-weight: 100;
 }
+
+.imagem {
+  margin-top: 25%;
+  margin-left: 10%;
+}
+
 .container{
 height: 100%;
 align-content: center;
 }
 
 .card{
-height: 700px;
-margin-top: auto;
+margin-top: 1%;
 margin-bottom: auto;
-width: 400px;
+width: 100%;
 background-color: rgba(0,0,0,0.5) !important;
+color: white;
 }
 
 .card-tittle h3{
@@ -38,13 +54,8 @@ background-color: rgba(0,0,0,0.5) !important;
 color: white;
 }
 
-.card-text h3{
-    color: white;
-    text-align: center;
-}
-
-.card-body{
-    text-align: center;
+.card-body h3 {
+  text-align: center;
 }
 
 .input-group-prepend span{
@@ -63,8 +74,7 @@ box-shadow: 0 0 0 0 !important;
 .btn{
 color: black;
 background-color: #FFC312;
-width: 150px;
-height: 50px;
+width: 100px;
 }
 
 .btn:hover{
@@ -72,16 +82,12 @@ color: black;
 background-color: white;
 }
 
-.sair_btn{
+#reservar_btn{
+margin-top: 10%;
 color: black;
-background-color: #d11507;
-width: 150px;
+background-color: #FFC312;
+width: 200px;
 height: 50px;
-}
-
-.sair_btn:hover{
-color: black;
-background-color: white;
 }
 
 .links{
@@ -90,4 +96,27 @@ color: white;
 
 .links a{
 margin-left: 4px;
+}
+
+.campos {
+margin-top: 20px;
+}
+
+.inv{
+  visibility: hidden;
+}
+
+#camposObrigatorios{
+  color: #d11507;
+}
+
+.filtro{
+  margin-left: 65%;
+  color: black;
+}
+
+.table {
+  width: 75%;
+  margin-left: 10%;
+  color: white;
 }

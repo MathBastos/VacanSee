@@ -6,7 +6,6 @@ $permite_cadastro = false;
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $senha_md5 = md5($dados['senha']);
 $id_hospede = $_SESSION["id_hospede"];
-echo($id_hospede);
 
 //$isAlterar = $id_hospede > 0 ? true:false;
 
@@ -37,8 +36,6 @@ if($id_hospede <= 0){
 }else{
     $permite_cadastro = true;
 }
-
-
 if($permite_cadastro){
 //query de inserção/edição na tabela usuário
     if($id_hospede > 0){

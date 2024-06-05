@@ -1,0 +1,101 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AluCar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/cadastroQuarto.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="../js/editaQuarto.js"></script>
+</head>
+
+<body onload="editaQuarto()">
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-tittle">
+                    <h3>Cadastrando Quarto</h3>
+                </div>
+                <div class="card-header">
+                    <h3></h3>
+                </div>
+                <div class="card-body">
+                    <form id="cadastroQuarto">
+                        <!-- Andar/Numero -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="andar">Andar <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="andar" name="andar" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            <label class="col-md-2 control-label campos" for="marca">Numero <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="numero" name="numero" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            
+                        </div>
+
+                        <!-- Cama -->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="tipo_cama">Tipo Camas <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="tipo_cama" name="tipo_cama" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            <label class="col-md-2 control-label campos" for="qtd_cama">Qtde Camas <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="qtd_cama" name="qtd_cama" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                        </div>
+
+                        <!-- Banheiro -->
+                           <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="qtd_banheiro">Qtde Banheiros <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="qtd_banheiro" name="qtd_banheiro" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            <label class="col-md-2 control-label campos" for="banheira">Banheira <h11>*</h11></label>  
+                            <div class="col-md-4">
+                                <input id="banheira" name="banheira" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                        </div>
+
+                        <!-- Portas / Passageiros / AR-->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="ar_condicionado">Ar Cond. <h11>*</h11></label>  
+                            <div class="col-md-2">
+                                <input id="ar_condicionado" name="ar_condicionado" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            <label class="col-md-2 control-label campos" for="servico_quarto">Serv. Quarto <h11>*</h11></label>  
+                            <div class="col-md-2">
+                                <input id="servico_quarto" name="servico_quarto" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            <label class="col-md-2 control-label campos" for="cafe_manha">Cafe da manha <h11>*</h11></label> 
+                            <div class="col-md-2">
+                                <input id="cafe_manha" name="cafe_manha" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                        </div>
+                        
+                        <!-- Valores-->
+                        <div class="form-group">
+                            <label class="col-md-2 control-label campos" for="valor_dia">Valor Dia <h11>*</h11></label>  
+                            <div class="col-md-2">
+                                <input id="valor_dia" name="valor_dia" placeholder="" class="form-control input-md campos" required="" type="text">
+                            </div>
+                            <label class="col-md-10 control-label campos inv" for="invisivel"></label>
+                        </div>
+                            
+                </div>
+                        <div class="card-body">
+                            <a href="indexGerente.html"><input type="button" value="Voltar" id="btnVoltar" class="btn voltar_btn"></a>
+                            <div class="col-md-8"></div>
+                            <input type="submit" value="Cadastrar" id="btnCadastrarQuarto" class="btn cadastrar_btn">
+                        </div> 
+                    </form>        
+            </div>
+        </div>
+    </div>
+<script src="../js/cadastroQuarto.js"></script>
+</body>
+</html>

@@ -1,5 +1,25 @@
 const cadGerente = document.getElementById("cadastroGerente");
 
+cadGerente.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const dadosForm = new FormData(cadGerente);
+    dadosForm.append("add", 1);
+
+    const dados = await fetch("../php/cadastroGerente.php", {
+        method: "POST",
+        body: dadosForm,
+    });
+
+    const resposta = await dados.json();
+    alert(resposta);
+
+    if (resposta == "Usuario cadastrado com sucesso!"){
+        location.href = 'loginGerente.html'
+    }
+});
+
+
+//CEP Automatico
 function limpa_formulario_cep() {
     //Limpa valores do formulário de cep.
     document.getElementById('rua').value = ("");
