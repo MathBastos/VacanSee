@@ -13,7 +13,7 @@ cadGerente.addEventListener("submit", async (e) => {
     const resposta = await dados.json();
     swal(resposta);
 
-    if (resposta == "Usuario cadastrado com sucesso!"){
+    if (resposta == "Hotel cadastrado com sucesso"){
         location.href = 'loginGerente.html'
     }
 });

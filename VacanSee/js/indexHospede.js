@@ -62,9 +62,10 @@ function filtrar (){
     var html = "<table class='table' itemborder='1'>";
 
     html += "<tr>";
-    html += "<td align='center'>" + "" + "</td>";
+    html += "<td align='center'>" + "Nome do Hotel" + "</td>";
     html += "<td align='center'>" + "Andar" + "</td>";
-    html += "<td align='center'>" + "Diária" + "</td>";
+    html += "<td align='center'>" + "Diária (R$)" + "</td>";
+    html += "<td align='center'>" + "" + "</td>";
     html += "</tr>";
 
 
@@ -79,11 +80,10 @@ function filtrar (){
         success: function (resultado) {
             for (var i = 0; i < resultado.length; i++) {
                 html += "<tr>";
-                html += "<td width='20%' align='center'>" + "<img width='100%' src=" + resultado[i].imagem + "></img>" + "</td>";
-                html += "<td align='center'>" + resultado[i].andar + "</td>";
                 html += "<td align='center'>" + resultado[i].nome + "</td>";
+                html += "<td align='center'>" + resultado[i].andar + "</td>";
                 html += "<td align='center'>" + resultado[i].valor_dia + "</td>";
-                html += "<td align='center'> <a onclick='alugarQuarto(" + resultado[i].id + ")'> <i class='fa fa-shopping-cart' aria-hidden='true'></i></td>";
+                html += "<td align='center'> <a onclick='reservarQuarto(" + resultado[i].id + ")'> <i class='fa fa-shopping-cart' aria-hidden='true'></i></td>";
                 html += "</tr>";
             }
             html += "</table>";

@@ -217,12 +217,12 @@ if($permite_cadastro){
     
     if($id_hotel <= 0){
         if($cad_hotel->rowCount() == 1){
-            $retorna = "Usuario cadastrado com sucesso";
+            $retorna = "Hotel cadastrado com sucesso";
         }else{
             $retorna = "Nao foi possivel cadastrar o usuario, verificar os campos";
         }  
     }else{
-        $retorna = "Usuario atualizado com sucesso";
+        $retorna = "Hotel atualizado com sucesso";
     }
 }
 echo json_encode($retorna);

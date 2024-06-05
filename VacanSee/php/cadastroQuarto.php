@@ -64,7 +64,6 @@ $cad_quarto->bindParam(':cafe_manha', $dados['cafe_manha']);
 $cad_quarto->bindParam(':valor_dia', $dados['valor_dia']);
 $cad_quarto->bindParam(':id_hotel', $_SESSION['id_hotel']);
 
-
 if($id_quarto > 0){
     $cad_quarto->bindParam(':id_quarto', $id_quarto);
     $cad_quarto->execute();

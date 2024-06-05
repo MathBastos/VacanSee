@@ -36,7 +36,7 @@ $(document).ready(function () {
                 html += "<td align='center'>" + resultado[i].numero + "</td>";
                 html += "<td align='center'>" + dataInicioFormatada + "</td>";
                 html += "<td align='center'>" + dataFimFormatada + "</td>";
-                html += "<td align='center'>" + resultado[i].valor + "</td>";
+                html += "<td align='center'>" + resultado[i].valor_reserva + "</td>";
                 html += "<td align='center'> <a onclick='deleteReserva(" + resultado[i].id +")'> <i class='fas fa-times' aria-hidden='true'></i> </td>";
                 html += "</tr>";
             }
