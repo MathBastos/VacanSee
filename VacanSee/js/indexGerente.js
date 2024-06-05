@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         url: "../php/valida_login.php",
         success: function (resultado) { 
             if (resultado == 2){
-                alert("Faça o login primeiro!");
+                swal("Faça o login primeiro!");
                 window.location.replace("../html/index.html");
             }
         },

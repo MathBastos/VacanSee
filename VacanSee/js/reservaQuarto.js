@@ -59,11 +59,11 @@ function reservar() {
         url: "../php/reservaQuarto.php",
         async: false,
         success: function (resultado) {
-            alert("Quarto Reservado com sucesso!");
+            swal("Quarto Reservado com sucesso!");
             location.href = 'indexHospede.html'
         },
         error: function () {
-            alert("Não foi possível reservar o Quarto, tente novamente!")
+            swal("Não foi possível reservar o Quarto, tente novamente!")
         }
     });
 }

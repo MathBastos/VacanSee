@@ -11,7 +11,7 @@ cadHospede.addEventListener("submit", async (e) => {
     });
 
     const resposta = await dados.json();
-    alert(resposta);
+    swal(resposta);
 
     if (resposta == "Usuario cadastrado com sucesso!"){
         location.href = 'loginHospede.html'

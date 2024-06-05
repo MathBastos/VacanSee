@@ -18,14 +18,14 @@ loginHospede.addEventListener("submit", async (e) => {
     const resposta = await dados.json();
     
     if(resposta == "bloqueado"){
-        alert("Este usuário está bloqueado! Para desbloqueio entrar em contato com administrador.");
+        swal("Este usuário está bloqueado!", "Para desbloqueio entrar em contato com administrador.","error");
     } 
 
     if(resposta == "sucesso"){
         window.location.replace("../html/indexHospede.html");
     }
     if(resposta == "erro"){
-        alert("Oops, tem algo errado! Verifique suas credenciais.");
+        swal("Oops, tem algo errado!", "Verifique suas credenciais.","error");
     }
 });
 

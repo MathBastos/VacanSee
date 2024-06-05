@@ -46,11 +46,11 @@ function block(id){
         data: "",
         url: "../php/bloqueioAcesso.php?id_usuario="+id,
         success: function (resultado) {
-            alert("Usuario bloqueado com sucesso!");
+            swal("Usuario bloqueado com sucesso!");
             window.location.reload();
         },
         error: function (){
-            alert("Usuario bloqueado com sucesso!");
+            swal("Usuario bloqueado com sucesso!");
             window.location.reload();
             
         }
@@ -64,11 +64,11 @@ function unblock(id){
         data: "",
         url: "../php/desbloqueioAcesso.php?id_usuario="+id,
         success: function (resultado) {
-            alert("Usuario desbloqueado com sucesso!");
+            swal("Usuario desbloqueado com sucesso!");
             window.location.reload();
         },
         error: function (){
-            alert("Usuario desbloqueado com sucesso!");
+            swal("Usuario desbloqueado com sucesso!");
             window.location.reload();
         }
     });

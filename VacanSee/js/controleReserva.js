@@ -56,7 +56,7 @@ function deleteReserva(id){
         data: "",
         url: "../php/deletaReserva.php?id_reserva="+id,
         success: function (resultado) {
-            alert("Reserva removida com sucesso!");
+            swal("Reserva removida com sucesso!");
             window.location.reload();
         },
         error: function (){   

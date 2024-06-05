@@ -41,7 +41,7 @@ function deleteQuarto(id){
         data: "",
         url: "../php/deletaQuarto.php?id_quarto="+id,
         success: function (resultado) {
-            alert("Quarto removido com sucesso!");
+            swal("Quarto removido com sucesso!");
             window.location.reload();
         },
         error: function (){
